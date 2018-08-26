@@ -71,6 +71,10 @@ public final class FortniteDataCaller implements ApplicationListener<TokenUpdate
     public DisplayName[] fetchDisplayNames(LeaderboardRaw leaderboardRaw){
         DisplayName[] displayNames = new DisplayName[0];
 
+        if (leaderboardRaw == null || leaderboardRaw.getEntries() == null) {
+            return displayNames;
+        }
+
         String request = "?";
         for(Account account : leaderboardRaw.getEntries()){
             request = String.join(request, "&accountId=" + account.getAccountId().replaceAll("-", ""));
