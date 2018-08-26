@@ -23,6 +23,7 @@ Query params :
   
 example : stats?player=ashtk&window=alltime (no stats for consoles as I don't play on them !)
 
+```js
 {
     "pc": {
         "solo": {
@@ -69,4 +70,4 @@ example : stats?player=ashtk&window=alltime (no stats for consoles as I don't pl
         }
     }
 }
-
+```
