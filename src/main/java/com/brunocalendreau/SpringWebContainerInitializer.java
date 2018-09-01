@@ -26,7 +26,6 @@ public class SpringWebContainerInitializer implements WebApplicationInitializer 
 
     private WebApplicationContext createWebAplicationContext(Class... configClasses) {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
-        // set to "prod" for production, "dev" for development
         context.register(configClasses);
         return context;
     }
