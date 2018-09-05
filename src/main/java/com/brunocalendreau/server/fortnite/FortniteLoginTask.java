@@ -45,14 +45,14 @@ public final class FortniteLoginTask implements Runnable {
     @Override
     public synchronized void run() {
         try {
-            if (token == null || !Token.isRefreshExpired(token)) {
+            if (token == null || Token.isRefreshExpired(token)) {
                 logger.info("Getting first token");
                 getToken();
             } else {
                 logger.info("Getting refresh token");
                 refreshToken();
             }
-            if (token == null || !token.getAccess_token().startsWith("eg1")) {
+            if (token == null || token.getAccess_token() == null || !token.getAccess_token().startsWith("eg1"))) {
                 throw new Exception("Malformed token");
             } else {
                 logger.info("Token retrieved successfully");
